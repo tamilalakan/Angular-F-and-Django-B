@@ -1,0 +1,50 @@
+<div *ngIf="!IsLoggedIn">
+
+<pre style="text-align: center;padding: 10px;">
+	<pre style="font-size: 1.4rem;margin-top: 40px;">Welcome {{input.username}} {{register.username}}</pre>
+<div class="row">
+  <div class="column">
+    <div class="card">
+<form class="form-signin">
+<h1 class="h3 mb-3 font-weight-normal">Login</h1>
+<input type="text" name="username" [(ngModel)]="input.username" placeholder="Username" class="form-control" required autofocus>	<input type="password" name="password" [(ngModel)]="input.password" placeholder="Password" class="form-control">	<p style="color: red;">{{errors}}</p>	<button class="btn btn-lg btn-primary btn-block" (click)="[onLogin(), onGetUser()]"  type="submit">Log in</button>
+
+</form>
+    </div>
+  </div>
+
+  <div class="column">
+    <div class="card">
+      <form class="form-signin">
+		<h1 class="h3 mb-3 font-weight-normal">Register an account</h1>
+		<input type="email" name="email" [(ngModel)]="register.email"  class="form-control" placeholder="Email address" required autofocus="">	<input type="text" name="username" [(ngModel)]="register.username" class="form-control" placeholder="Username" required>	<input type="password" name="password" [(ngModel)]="register.password"  class="form-control" placeholder="Password" required>	<input type="password" name="password2" [(ngModel)]="register.password1"  ng-pattern="password1" class="form-control" placeholder="Confirm Password" required>	<p style="color: red">{{rErrors}}</p>	<button class="btn btn-lg btn-primary btn-block" (click)="onRegister()" type="submit">Register</button>
+		
+	</form>
+
+    </div>
+  </div>
+  
+</div>
+
+
+</pre>
+</div>
+
+<div *ngIf="IsLoggedIn">
+	<pre style="text-align: center;padding: 10px;"><b>User's in DataBase</b></pre>
+	<div class="row">
+		<div *ngFor="let user of users">
+		<div class="column">
+			<div class="card">
+				<h3>{{user.id}}</h3>
+				<pre>Name: {{user.username}}</pre>
+				<pre>Email: {{user.email}}</pre>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+
+<!-- <router-outlet></router-outlet> -->
