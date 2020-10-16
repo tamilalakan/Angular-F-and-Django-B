@@ -40,6 +40,7 @@ export class AppComponent {
     data => {
       alert ('User ' + this.register.username + ' has been created');
       this.success = "Successfully Created..Kindly Login..";
+      this.router.navigate(['/']);
     },
     error => {
       this.rErrors = "*Kindly see and fill the form..";
