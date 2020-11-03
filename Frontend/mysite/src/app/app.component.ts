@@ -41,6 +41,7 @@ export class AppComponent {
       alert ('User ' + this.register.username + ' has been created');
       this.success = "Successfully Created..Kindly Login..";
       this.router.navigate(['/']);
+      window.location.reload();
     },
     error => {
       this.rErrors = "*Kindly see and fill the form..";
