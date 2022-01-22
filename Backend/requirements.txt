@@ -1,8 +1,8 @@
-Django==3.1.2
-django-rest-auth==0.9.5
-djangorestframework==3.12.1
-pytz==2020.1
-six==1.15.0
-sqlparse==0.4.1
-psycopg2===2.8.5
-asgiref==3.2.10
+Django
+django-rest-auth
+djangorestframework
+pytz
+six
+sqlparse
+psycopg2
+asgiref
